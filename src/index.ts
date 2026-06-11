@@ -1,18 +1,18 @@
 import net from "net";
 import { decode } from "@msgpack/msgpack";
 
-import "./Database";
+import "./Database/Database";
 
 import type { Packet }
     from "./Shared/Packet";
 
 import {
     Dispatch
-} from "./Network/PacketDispatcher";
+} from "./Networking/lib/PacketDispatcher";
 
 import {
     RegisterHandlers
-} from "./Network/RegisterHandlers";
+} from "./Networking/RegisterHandlers";
 
 RegisterHandlers();
 
