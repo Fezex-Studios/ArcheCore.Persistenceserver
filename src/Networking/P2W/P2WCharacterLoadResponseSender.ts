@@ -18,6 +18,8 @@ export function SendP2WCharacterLoadResponse(
         ProtocolPersistence.CharacterLoad,
         response);
 
-    console.log(
-        `Loaded ${response.Name}`);
+    if (response.Found)
+        console.log(`[Persistence] Sent character load response: ${response.Name}`);
+    else
+        console.log(`[Persistence] Sent not-found response for CharacterId=${response.CharacterId}`);
 }

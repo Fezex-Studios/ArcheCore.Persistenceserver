@@ -1,5 +1,6 @@
 export interface P2WCharacterLoadResponse
 {
+    Found: boolean;
     CharacterId: number;
 
     Name: string;

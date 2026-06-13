@@ -36,19 +36,32 @@ export async function W2PCharacterLoadHandler(
     if (!row)
     {
         console.log(
-            `Character ${request.CharacterId} not found`);
+            `[Persistence] Character ${request.CharacterId} not found — sending empty response`);
+
+        SendP2WCharacterLoadResponse(
+            socket,
+            {
+                Found:       false,
+                CharacterId: request.CharacterId,
+                Name:        "",
+                Level:       0,
+                X:           0,
+                Y:           0,
+                Z:           0
+            });
 
         return;
     }
 
     const response: P2WCharacterLoadResponse =
         {
+            Found:       true,
             CharacterId: row.character_id,
-            Name: row.name,
-            Level: row.level,
-            X: row.pos_x,
-            Y: row.pos_y,
-            Z: row.pos_z
+            Name:        row.name,
+            Level:       row.level,
+            X:           row.pos_x,
+            Y:           row.pos_y,
+            Z:           row.pos_z
         };
 
     SendP2WCharacterLoadResponse(

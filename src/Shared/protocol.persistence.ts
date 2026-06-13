@@ -6,4 +6,5 @@ export enum ProtocolPersistence
 
     CharacterLoad = 3,
     P2WConnectResponse=4,
+    HelloWorld =5
 }

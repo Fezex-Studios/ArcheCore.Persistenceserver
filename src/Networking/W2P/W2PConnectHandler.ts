@@ -2,8 +2,8 @@ import net from "net";
 
 import { decode }
     from "@msgpack/msgpack";
-import {SendP2WConnectResponse} from "../P2W/P2WConnectResponseSender";
 import {W2PConnectRequest} from "../../Shared/Packets/Requests/W2PConnectRequest";
+import {SendP2WConnectResponse} from "../P2W/P2WConnectResponseSender";
 
 
 
